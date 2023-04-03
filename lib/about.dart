@@ -12,6 +12,20 @@ class MyAbout extends StatefulWidget {
 }
 
 class _MyAboutState extends State<MyAbout> {
+  final Uri _url=Uri.parse('https://google.com/document/d/16EohKt1PBl1D5OYujltQ6raDDrGnhjy2/edit');
+  final Uri _linkedinUrl=Uri.parse('https://www.linkedin.com/in/kaviraj-thakur-a84b671a6/');
+  final Uri _instaUrl=Uri.parse('https://www.instagram.com/kaviraj.thakurrr/');
+  final Uri _facebookUrl=Uri.parse('https://facebook.com');
+  final Uri _githubUrl=Uri.parse('https://github.com/kavirajthakur');
+  final Uri _whatsappUrl=Uri.parse('https://web.whatsapp.com/');
+  Future<void> _launchUrl(var url) async {
+    print("launch 1");
+    if (!await launchUrl(url)) {
+      print("launch 2");
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,16 +88,17 @@ class _MyAboutState extends State<MyAbout> {
                     height: 30,
                   ),
                   SizedBox(
-                    child: InkWell(
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text('Hire Me'),
-                        style: TextButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Colors.white, // Background Color
-                        ),
-                      ),
+                    child: TextButton(
+                      onPressed: () {
+                        _launchUrl(_url);
 
+                      },
+                      child: Text('Hire Me'),
+
+                      style: TextButton.styleFrom(
+                        primary: Colors.black,
+                        backgroundColor: Colors.white, // Background Color
+                      ),
 
                     ),
                     width: 120,
@@ -96,23 +111,38 @@ class _MyAboutState extends State<MyAbout> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(onPressed:(){}, icon: Icon(
+                      IconButton(onPressed:(){
+                        _launchUrl(_linkedinUrl);
+
+                      }, icon: Icon(
                         FontAwesomeIcons.linkedinIn,color: Colors.white,
 
                       ),),
-                      IconButton(onPressed:(){}, icon: Icon(
+                      IconButton(onPressed:(){
+                        _launchUrl(_instaUrl);
+
+                      }, icon: Icon(
                         FontAwesomeIcons.instagram,color: Colors.white,
 
                       ),),
-                      IconButton(onPressed:(){}, icon: Icon(
+                      IconButton(onPressed:(){
+                        _launchUrl(_facebookUrl);
+
+                      }, icon: Icon(
                         FontAwesomeIcons.facebook,color: Colors.white,
 
                       ),),
-                      IconButton(onPressed:(){}, icon: Icon(
+                      IconButton(onPressed:(){
+                        _launchUrl(_githubUrl);
+
+                      }, icon: Icon(
                         FontAwesomeIcons.github,color: Colors.white,
 
                       ),),
-                      IconButton(onPressed:(){}, icon: Icon(
+                      IconButton(onPressed:(){
+                        _launchUrl(_whatsappUrl);
+
+                      }, icon: Icon(
                         FontAwesomeIcons.whatsapp,color: Colors.white,
 
                       ),),
