@@ -12,7 +12,7 @@ class MyAbout extends StatefulWidget {
 }
 
 class _MyAboutState extends State<MyAbout> {
-  final Uri _url=Uri.parse('https://google.com/document/d/16EohKt1PBl1D5OYujltQ6raDDrGnhjy2/edit');
+  final Uri _url=Uri.parse('https://drive.google.com/drive/u/0/folders/1nkDPfdeQarLQY9cfxN6R7RwXbD_PY4rg');
   final Uri _linkedinUrl=Uri.parse('https://www.linkedin.com/in/kaviraj-thakur-a84b671a6/');
   final Uri _instaUrl=Uri.parse('https://www.instagram.com/kaviraj.thakurrr/');
   final Uri _facebookUrl=Uri.parse('https://facebook.com');
